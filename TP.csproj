@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{454A1392-1A18-4116-8F7B-5C323E91F751}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TP</RootNamespace>
+    <AssemblyName>TP</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccesoADatos\AccesoDatos.cs" />
+    <Compile Include="AccesoADatos\AD_Barrios.cs" />
+    <Compile Include="AccesoADatos\AD_Clubes.cs" />
+    <Compile Include="AccesoADatos\AD_EquipoTecnico.cs" />
+    <Compile Include="AccesoADatos\AD_Localidades.cs" />
+    <Compile Include="AccesoADatos\AD_Temporadas.cs" />
+    <Compile Include="AccesoADatos\AD_Categorias.cs" />
+    <Compile Include="AccesoADatos\AD_Campeonatos.cs" />
+    <Compile Include="AccesoADatos\AD_Arbitros.cs" />
+    <Compile Include="AccesoADatos\AD_EquipoDirectivo.cs" />
+    <Compile Include="AccesoADatos\AD_Estadios.cs" />
+    <Compile Include="AccesoADatos\AD_Jugadores.cs" />
+    <Compile Include="AccesoADatos\AD_Partidos.cs" />
+    <Compile Include="AccesoADatos\AD_Usuarios.cs" />
+    <Compile Include="ConjuntoDeDatos\DatosEstadistica.cs">
+      <DependentUpon>DatosEstadistica.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ConjuntoDeDatos\DatosEstadistica.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosEstadistica.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\Arbitros.cs" />
+    <Compile Include="Entidades\Autoridad.cs" />
+    <Compile Include="Entidades\Barrio.cs" />
+    <Compile Include="Entidades\Categoria.cs" />
+    <Compile Include="Entidades\Club.cs" />
+    <Compile Include="Entidades\CuentaCorriente.cs" />
+    <Compile Include="Entidades\Cuerpo_Tecnico.cs" />
+    <Compile Include="Entidades\EquipoDirectivo.cs" />
+    <Compile Include="Entidades\Estadio.cs" />
+    <Compile Include="Entidades\Genero.cs" />
+    <Compile Include="Entidades\Jugador.cs" />
+    <Compile Include="Entidades\Jugador_Partido.cs" />
+    <Compile Include="Entidades\Partido.cs" />
+    <Compile Include="Entidades\Temporada.cs" />
+    <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="Estadisticas\estArbitrosXPartidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\estArbitrosXPartidos.Designer.cs">
+      <DependentUpon>estArbitrosXPartidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\estBarriosXLocalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\estBarriosXLocalidad.Designer.cs">
+      <DependentUpon>estBarriosXLocalidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\estCampeonatosGanadosPorClub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\estCampeonatosGanadosPorClub.Designer.cs">
+      <DependentUpon>estCampeonatosGanadosPorClub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\estCargosXEquipoTecnico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\estCargosXEquipoTecnico.Designer.cs">
+      <DependentUpon>estCargosXEquipoTecnico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\estClubesXBarrio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\estClubesXBarrio.Designer.cs">
+      <DependentUpon>estClubesXBarrio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\estDirectivosXClub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\estDirectivosXClub.Designer.cs">
+      <DependentUpon>estDirectivosXClub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\estEstadiosXBarrio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\estEstadiosXBarrio.Designer.cs">
+      <DependentUpon>estEstadiosXBarrio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\estJugadoresXClub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\estJugadoresXClub.Designer.cs">
+      <DependentUpon>estJugadoresXClub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\estJugadoresXPartidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\estJugadoresXPartidos.Designer.cs">
+      <DependentUpon>estJugadoresXPartidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\estPartidosXCampeonato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\estPartidosXCampeonato.Designer.cs">
+      <DependentUpon>estPartidosXCampeonato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\AltaPartido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AltaPartido.Designer.cs">
+      <DependentUpon>AltaPartido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Arbitro.cs" />
+    <Compile Include="Formularios\frmEquipoDirectivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmEquipoDirectivo.Designer.cs">
+      <DependentUpon>frmEquipoDirectivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmAltaAutoridad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmAltaAutoridad.Designer.cs">
+      <DependentUpon>frmAltaAutoridad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmAltaCuerpoTecnico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmAltaCuerpoTecnico.Designer.cs">
+      <DependentUpon>frmAltaCuerpoTecnico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmAltaJugador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmAltaJugador.Designer.cs">
+      <DependentUpon>frmAltaJugador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmAltaTemporada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmAltaTemporada.Designer.cs">
+      <DependentUpon>frmAltaTemporada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmUsuarios.Designer.cs">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frm_AltaCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frm_AltaCategoria.Designer.cs">
+      <DependentUpon>frm_AltaCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frm_AltaClub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frm_AltaClub.Designer.cs">
+      <DependentUpon>frm_AltaClub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frm_Arbitros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frm_Arbitros.Designer.cs">
+      <DependentUpon>frm_Arbitros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frm_Estadios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frm_Estadios.Designer.cs">
+      <DependentUpon>frm_Estadios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ligas_basketDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ligas_basketDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\rptClubes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptClubes.Designer.cs">
+      <DependentUpon>rptClubes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptPartidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptPartidos.Designer.cs">
+      <DependentUpon>rptPartidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptTemporadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptTemporadas.Designer.cs">
+      <DependentUpon>rptTemporadas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptUsuarios2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptUsuarios2.Designer.cs">
+      <DependentUpon>rptUsuarios2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptCampeonatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptCampeonatos.Designer.cs">
+      <DependentUpon>rptCampeonatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptCategorias.Designer.cs">
+      <DependentUpon>rptCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptEstadios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptEstadios.Designer.cs">
+      <DependentUpon>rptEstadios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptListadoArbitros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptListadoArbitros.Designer.cs">
+      <DependentUpon>rptListadoArbitros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptListadoEquipoDirectivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptListadoEquipoDirectivo.Designer.cs">
+      <DependentUpon>rptListadoEquipoDirectivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptListadoJugadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptListadoJugadores.Designer.cs">
+      <DependentUpon>rptListadoJugadores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Estadisticas\estArbitrosXPartidos.rdlc" />
+    <EmbeddedResource Include="Estadisticas\estArbitrosXPartidos.resx">
+      <DependentUpon>estArbitrosXPartidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\estBarriosXLocalidad.rdlc" />
+    <EmbeddedResource Include="Estadisticas\estBarriosXLocalidad.resx">
+      <DependentUpon>estBarriosXLocalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\estCampeonatosGanadosPorClub.rdlc" />
+    <EmbeddedResource Include="Estadisticas\estCampeonatosGanadosPorClub.resx">
+      <DependentUpon>estCampeonatosGanadosPorClub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\estCargosXEquipoTecnico.rdlc" />
+    <EmbeddedResource Include="Estadisticas\estCargosXEquipoTecnico.resx">
+      <DependentUpon>estCargosXEquipoTecnico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\estClubesXBarrio.rdlc" />
+    <EmbeddedResource Include="Estadisticas\estClubesXBarrio.resx">
+      <DependentUpon>estClubesXBarrio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\estDirectivosXClub.rdlc" />
+    <EmbeddedResource Include="Estadisticas\estDirectivosXClub.resx">
+      <DependentUpon>estDirectivosXClub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\estEstadiosXBarrio.rdlc" />
+    <EmbeddedResource Include="Estadisticas\estEstadiosXBarrio.resx">
+      <DependentUpon>estEstadiosXBarrio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\estJugadoresXClub.rdlc" />
+    <EmbeddedResource Include="Estadisticas\estJugadoresXClub.resx">
+      <DependentUpon>estJugadoresXClub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\estJugadoresXPartidos.rdlc" />
+    <EmbeddedResource Include="Estadisticas\estJugadoresXPartidos.resx">
+      <DependentUpon>estJugadoresXPartidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\estPartidosXCampeonato.rdlc" />
+    <EmbeddedResource Include="Estadisticas\estPartidosXCampeonato.resx">
+      <DependentUpon>estPartidosXCampeonato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\AltaPartido.resx">
+      <DependentUpon>AltaPartido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmEquipoDirectivo.resx">
+      <DependentUpon>frmEquipoDirectivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmAltaAutoridad.resx">
+      <DependentUpon>frmAltaAutoridad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmAltaCuerpoTecnico.resx">
+      <DependentUpon>frmAltaCuerpoTecnico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmAltaJugador.resx">
+      <DependentUpon>frmAltaJugador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmAltaTemporada.resx">
+      <DependentUpon>frmAltaTemporada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frm_AltaCategoria.resx">
+      <DependentUpon>frm_AltaCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frm_AltaClub.aa.resx">
+      <DependentUpon>frm_AltaClub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frm_AltaClub.resx">
+      <DependentUpon>frm_AltaClub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frm_Arbitros.resx">
+      <DependentUpon>frm_Arbitros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frm_Estadios.resx">
+      <DependentUpon>frm_Estadios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reportes\rptClubes.resx">
+      <DependentUpon>rptClubes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptPartidos.resx">
+      <DependentUpon>rptPartidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptTemporadas.resx">
+      <DependentUpon>rptTemporadas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptClubesReporte.rdlc" />
+    <EmbeddedResource Include="Reportes\rptTemporadas.rdlc" />
+    <EmbeddedResource Include="Reportes\rptUsuarios2.resx">
+      <DependentUpon>rptUsuarios2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptUsuarios.rdlc" />
+    <EmbeddedResource Include="Reportes\rptCampeonatos.rdlc" />
+    <EmbeddedResource Include="Reportes\rptCampeonatos.resx">
+      <DependentUpon>rptCampeonatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptCategorias.rdlc" />
+    <EmbeddedResource Include="Reportes\rptCategorias.resx">
+      <DependentUpon>rptCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptEstadios.rdlc" />
+    <EmbeddedResource Include="Reportes\rptEstadios.resx">
+      <DependentUpon>rptEstadios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptListadoArbitros.rdlc" />
+    <EmbeddedResource Include="Reportes\rptListadoArbitros.resx">
+      <DependentUpon>rptListadoArbitros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptListadoEquipoDirectivo.rdlc" />
+    <EmbeddedResource Include="Reportes\rptListadoEquipoDirectivo.resx">
+      <DependentUpon>rptListadoEquipoDirectivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptListadoJugadores.rdlc" />
+    <EmbeddedResource Include="Reportes\rptListadoJugadores.resx">
+      <DependentUpon>rptListadoJugadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptPartidos.rdlc" />
+    <None Include="ConjuntoDeDatos\DatosEstadistica.xsc">
+      <DependentUpon>DatosEstadistica.xsd</DependentUpon>
+    </None>
+    <None Include="ConjuntoDeDatos\DatosEstadistica.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosEstadistica.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ConjuntoDeDatos\DatosEstadistica.xss">
+      <DependentUpon>DatosEstadistica.xsd</DependentUpon>
+    </None>
+    <None Include="ligas_basketDataSet.xsc">
+      <DependentUpon>ligas_basketDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ligas_basketDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ligas_basketDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ligas_basketDataSet.xss">
+      <DependentUpon>ligas_basketDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
